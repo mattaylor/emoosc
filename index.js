@@ -5,7 +5,7 @@ var conf = require('./config.js')
 
 conf.emo.socket = new WebSocket('ws://localhost:54321'),
 
-var emo = new Emocore(conf.emo.newSession({ project:'OSC', status:'active' })
+var emo = (new Emocore(conf.emo)).newSession({ project:'OSC', status:'active' })
 var osc = new OSC.UDPPort({ localAddress:conf.osc.host, localPort:57000, broadcast:true, metadata: true })
 
 osc.open()
